@@ -8,16 +8,21 @@
   <body>
     <div id="app">
       <ul>
-        <li v-for="todo in todos">
+        <li v-for="todo in todos" v-bind:class="todo.priority ? 'true':'false'">
           <span>{{ todo.name }}</span>
-
-        </li>
+          <label><input type="radio" v-model="todo.priority" v-bind:value="todo.priority" name="Low">{{todo.priority}}</label>
       </ul>
 
       <form v-on:submit.prevent="addNewToDo">
         <label for="newToDo" type="text">New Task</label>
         <input id="newToDo" type="text" v-model="newToDo"/>
         <input type="submit" value="Add task">
+
+        <label for="Low">Low</label>
+        <input type="radio" id="Low" value="Low" />
+
+        <label for="High">High</label>
+        <input type="radio" id="High" value="High" />
       </form>
 
     </div>

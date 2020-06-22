@@ -7,15 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
       todos: [
         {
           name:"Do the shopping",
-          priority: "high"
+          priority: "High"
         }, 
         {
           name: "Car's MOT",
-          priority: "high"
+          priority: "High"
         }, 
         {
           name: "Water plants",
-          priority: "medium"
+          priority: "Low"
         }
       ],
       newToDo: ""
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
       addNewToDo: function(){
         this.todos.push({
           name: this.newToDo,
-          priority: "high"
+          priority: ""
           });
         this.newToDo = "";
       }
